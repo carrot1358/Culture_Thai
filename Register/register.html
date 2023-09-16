@@ -10,7 +10,7 @@
         body {
             background-color: #f0f0f0;
         }
-        .register-container {
+        .registration-container {
             max-width: 400px;
             margin: 0 auto;
             padding: 20px;
@@ -22,7 +22,7 @@
 </head>
 <body>
 <div class="container mt-5">
-    <div class="register-container">
+    <div class="registration-container">
         <h2 class="text-center">Register</h2>
         <form action="register.php" method="POST">
             <div class="mb-3">
@@ -36,6 +36,46 @@
             <div class="mb-3">
                 <label for="confirm_password" class="form-label">Confirm Password</label>
                 <input type="password" class="form-control" id="confirm_password" name="confirm_password" required>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="mb-3">
+                <label for="phone" class="form-label">Phone Number</label>
+                <div class="input-group">
+                    <span class="input-group-text">+66</span>
+                    <input type="tel" class="form-control" id="phone" name="phone" required>
+                </div>
+            </div>
+
+            <script>
+                // JavaScript to handle phone number input validation
+                document.getElementById("phone").addEventListener("input", function() {
+                    // Remove all non-digit characters
+                    const phoneNumber = this.value.replace(/\D/g, "");
+
+                    // Limit the phone number to 9 digits
+                    const maxDigits = 9;
+                    if (phoneNumber.length > maxDigits) {
+                        this.value = phoneNumber.slice(0, maxDigits);
+                    } else {
+                        this.value = phoneNumber;
+                    }
+                });
+            </script>
+
+            <div class="mb-3">
+                <label for="first_name" class="form-label">First Name</label>
+                <input type="text" class="form-control" id="first_name" name="first_name" required>
+            </div>
+            <div class="mb-3">
+                <label for="last_name" class="form-label">Last Name</label>
+                <input type="text" class="form-control" id="last_name" name="last_name" required>
+            </div>
+            <div class="mb-3">
+                <label for="birthday" class="form-label">Birthday</label>
+                <input type="date" class="form-control" id="birthday" name="birthday" required>
             </div>
             <div class="d-grid">
                 <button type="submit" class="btn btn-primary">Register</button>

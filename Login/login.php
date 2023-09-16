@@ -1,4 +1,5 @@
 <?php
+session_start();
 // Check if the form is submitted
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Retrieve user input
@@ -22,6 +23,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Check if a matching user is found
     if ($result->num_rows === 1) {
         // Authentication successful, redirect to the dashboard or another page
+        $_SESSION['user_logged_in'] = true;
+        $_SESSION['user_name'] = $username;
+        $_SESSION['user_id'] = $result->fetch_assoc()['id'];
         header("Location: ../index.html");
         exit();
     } else {

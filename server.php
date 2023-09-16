@@ -13,5 +13,6 @@
         die("<script> alert('Connect DATABASE failed ...'); </script> " . $conn->connect_error);
     }
     //end connect database
-//--?>
+
+?>
 
