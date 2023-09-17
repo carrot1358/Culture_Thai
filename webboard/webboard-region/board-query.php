@@ -17,6 +17,6 @@ $recentPostsQuery = "SELECT * FROM posts ORDER BY timestamp DESC LIMIT 2";
 $recentPostsResult = $conn->query($recentPostsQuery);
 
 // Query to retrieve all posts
-$allPostsQuery = "SELECT * FROM posts";
+$allPostsQuery = "SELECT * FROM posts ORDER BY timestamp DESC";
 $allPostsResult = $conn->query($allPostsQuery);
 ?>

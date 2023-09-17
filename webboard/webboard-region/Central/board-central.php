@@ -10,8 +10,8 @@
 <body>
 <?php include_once('board-central-query.php');
 //nav path
-$post_path = "../post.php";
-$landing_path = "../../../index.html";
+$post_path = "../../Post/post.php";
+$landing_path = "../../../index.php";
 $homeboard_path = "../board-home.php";
 $login_path = "../../../Login/login.html";
 $register_path = "../../../Register/register.html";
@@ -21,6 +21,13 @@ $north_path = "../North/board-north.php";
 $northeast_path = "../North East/board-northeast.php";
 $central_path = "./board-central.php";
 $south_path = "../South/board-south.php";
+
+//profile user path
+$profile_path = "../../../Profile/profile.php";
+$my_post_path = "../../../Profile/my-post.php";
+$logout_path = "../../../Logout/logout.php";
+
+$create_post_path = "../../Post/create-post.php";
 ?>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
@@ -34,12 +41,47 @@ $south_path = "../South/board-south.php";
                 <li class="nav-item">
                     <a class="nav-link" href="<?=$homeboard_path?>">Home</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="<?=$login_path?>">Login</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="<?=$register_path?>">Register</a>
-                </li>
+                <?php
+                // Check if the user is logged in
+                session_start();
+                // Define a custom error handler function to convert warnings to exceptions
+                function customErrorHandler($errno, $errstr, $errfile, $errline) {
+                    throw new ErrorException($errstr, 0, $errno, $errfile, $errline);
+                }
+                // Set the custom error handler
+                set_error_handler("customErrorHandler");
+
+                try{
+                    $user_logged_in = $_SESSION['user_logged_in'];
+                    $user_name = $_SESSION['user_name'];
+                }catch (ErrorException  $e){
+                    $user_logged_in = false;
+                }
+                restore_error_handler();
+                if ($user_logged_in) {
+                    // Display the user's name instead of login and register buttons
+                    // Display the user's name as a dropdown
+                    echo '<li class="nav-item dropdown">';
+                    echo '<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">';
+                    echo 'Welcome, ' . $user_name;
+                    echo '</a>';
+                    echo '<div class="dropdown-menu" aria-labelledby="navbarDropdown">';
+                    echo '<a class="dropdown-item" href="' . $profile_path . '">Profile</a>';
+                    echo '<a class="dropdown-item" href="' . $my_post_path . '">My Posts</a>';
+                    echo '<hr style="margin: 2px">';
+                    echo '<a class="dropdown-item" href="' . $logout_path . '">Logout</a>';
+                    echo '</div>';
+                    echo '</li>';
+                } else {
+                    // Display login and register buttons
+                    echo '<li class="nav-item">';
+                    echo '<a class="nav-link" href="' . $login_path . '">Login</a>';
+                    echo '</li>';
+                    echo '<li class="nav-item">';
+                    echo '<a class="nav-link" href="' . $register_path . '">Register</a>';
+                    echo '</li>';
+                }
+                ?>
             </ul>
         </div>
     </div>
@@ -58,7 +100,18 @@ $south_path = "../South/board-south.php";
         <div class="col-lg-8">
             
             <!-- Display recent posts -->
-            <h2>Recent Posts</h2>
+            <div class="row">
+                <!--Recent posts text-->
+                <div class="col"><h2>Recent Posts</h2></div>
+                <!--Create post button-->
+                <?php if ($user_logged_in) : ?>
+                    <div class="col text-right"><a href="<?= $create_post_path ?>"
+                                                   class="btn btn-primary">สร้างโพสต์</a></div>
+                <?php else : ?>
+                    <div class="col text-right"><a href="<?= $login_path ?>"
+                                                   class="btn btn-primary">สร้างโพสต์</a></div>
+                <?php endif; ?>
+            </div>
             <?php while ($row = $recentPostsResult->fetch_assoc()) : ?>
                 <div class="card mb-3">
                     <div class="card-body">

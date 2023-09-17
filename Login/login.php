@@ -25,8 +25,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Authentication successful, redirect to the dashboard or another page
         $_SESSION['user_logged_in'] = true;
         $_SESSION['user_name'] = $username;
-        $_SESSION['user_id'] = $result->fetch_assoc()['id'];
-        header("Location: ../index.html");
+        $_SESSION['user_id'] = $result->fetch_assoc()['ID'];
+        $_SESSION['user_firstname'] = $result->fetch_assoc()['first_name'];
+        header("Location: ../index.php");
         exit();
     } else {
         // Authentication failed, display an error message

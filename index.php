@@ -49,8 +49,47 @@
 
         </div>
         <div class="d-flex">
-            <a href="Login\Login.html" class="btn btn-outline-dark">Login</a>
-            <a href="Register\register.html" class="btn btn-outline-dark">Register</a>
+            <?php
+
+                $loginpath="Login/Login.html";
+                $register_path = "Register/register.html";
+                $logout_path = "Logout/logout.php";
+                $profile_path = "Profile/profile.php";
+                $my_post_path = "./Profile/my-post.php";
+                // Check if the user is logged in
+                session_start();
+                // Define a custom error handler function to convert warnings to exceptions
+                function customErrorHandler($errno, $errstr, $errfile, $errline) {
+                    throw new ErrorException($errstr, 0, $errno, $errfile, $errline);
+                }
+                // Set the custom error handler
+                set_error_handler("customErrorHandler");
+
+                try{
+                    $user_logged_in = $_SESSION['user_logged_in'];
+                    $user_name = $_SESSION['user_name'];
+                }catch (ErrorException  $e){
+                    $user_logged_in = false;
+                }
+                restore_error_handler();
+                if ($user_logged_in) {
+                    // Display the user's name instead of login and register buttons
+                    // Display the user's name as a dropdown
+                    echo '<div class="btn-group">';
+                    echo  '<button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"> Welcome, '.$user_name.' </button>';
+                    echo  '<ul class="dropdown-menu dropdown-menu-end">';
+                    echo    '<li><a class="dropdown-item" href="' . $profile_path . '">Profile</a></li>';
+                    echo    '<li><a class="dropdown-item" href="' . $my_post_path . '">My Posts</a></li>';
+                    echo    '<hr>';
+                    echo    '<li><a class="dropdown-item" href="' . $logout_path . '">Logout</a></li>';
+                    echo '</ul>';
+                    echo '</div>';
+                } else {
+                    // Display login and register buttons
+                    echo '<a href="'.$loginpath.'" class="btn btn-outline-dark">Login</a>';
+                    echo '<a href="'. $register_path .'" class="btn btn-outline-dark">Register</a>';
+                    }
+            ?>
         </div>
     </div>
 </nav>
