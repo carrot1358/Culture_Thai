@@ -59,7 +59,7 @@
                 // Check if the user is logged in
                 session_start();
                 // Define a custom error handler function to convert warnings to exceptions
-                function customErrorHandler($errno, $errstr, $errfile, $errline) {
+            function customErrorHandler($errno, $errstr, $errfile, $errline) {
                     throw new ErrorException($errstr, 0, $errno, $errfile, $errline);
                 }
                 // Set the custom error handler
