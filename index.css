@@ -1,5 +1,7 @@
 body nav {
     font-family: 'Noto Sans Thai', sans-serif;
+    font-weight: 800;
+    z-index: 10;
 }
 
 /* login regis */
@@ -9,25 +11,34 @@ body nav {
     align-items: self-end;
     border: 1px solid #ff0000;
 }
+
 #login-bt {
     border: 1px solid #ff0000;
 }
 
-/* Header */
-header h1{
+
+/*************************/
+/*        Header         */
+/*************************/
+header h1 {
     font-family: 'KoHo', sans-serif;
     text-shadow: rgba(0, 0, 0, 0.73) 1px 1px 1px;
     font-size: 100px;
 }
-header p{
+
+header .lead {
     font-family: 'Noto Sans Thai', sans-serif;
     text-shadow: rgba(0, 0, 0, 0.73) 1px 1px 1px;
+    font-weight: 800;
 }
-header a{
+
+header a {
     font-family: 'Noto Sans Thai', sans-serif;
+    font-weight: 800;
 
 }
-header #learn-more-info{
+
+header #learn-more-info {
     display: block;
     margin-top: 1rem;
     margin-left: auto;
@@ -39,6 +50,7 @@ header #learn-more-info{
     border-radius: 0.5rem;
     text-decoration: none;
 }
+
 header {
     background-image: url("https://hilight.kapook.com/img_cms2/user/Jarosphan/2022/Hilight/Day/47473/01.jpg");
     background-size: cover;
@@ -50,44 +62,374 @@ header {
     justify-content: center;
     align-items: center;
 }
+
 #into-info {
     text-align: center;
-    width: 800px;
+    width: 850px;
     color: #ffffff;
 }
 
-/* region */
-#info-region{
+
+/*************************/
+/*        region         */
+/*************************/
+#info-region {
     display: flex;
     margin-bottom: 1rem;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    //border: 1px solid #ff0000;
+/ / border: 1 px solid #ff0000;
 }
-#region h1{
+
+#region h1 {
     margin-bottom: 1rem;
     font-family: 'KoHo', sans-serif;
     text-shadow: rgba(0, 0, 0, 0.73) 1px 1px 1px;
     text-align: center;
     font-size: 30px;
 }
-#info-region-p{
+
+#info-region-p {
     width: 60%;
     font-family: 'Noto Sans Thai', sans-serif;
     font-size: 15px;
     text-align: center;
 }
-#region{
+
+#region {
     margin-top: 6rem;
     margin-botton: 1rem;
 }
-.col{
+
+.col {
     display: flex;
     margin-top: 4rem;
     margin-bottom: 4rem;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    //border: 1px solid #ff0000;
+/ / border: 1 px solid #ff0000;
+}
+
+#nav-bar {
+    position: sticky;
+    top: 0;
+}
+
+
+/*************************/
+/*       Services        */
+/*************************/
+.services {
+    font-family: 'Noto Sans Thai', sans-serif;
+    font-weight: 400;
+    padding-top: 100px;
+    position: relative;
+}
+
+.services:after {
+    content: '';
+    background-image: url(assets/images/services-left-dec.jpg);
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 0;
+    top: 0px;
+    width: 786px;
+    height: 1217px;
+    z-index: -1;
+}
+
+.services:before {
+    content: '';
+    background-image: url(assets/images/services-right-dec.jpg);
+    background-repeat: no-repeat;
+    position: absolute;
+    right: 0;
+    top: 400px;
+    width: 161px;
+    height: 413px;
+    z-index: 0;
+}
+
+.services .section-heading {
+    text-align: center;
+    margin-bottom: 40px;
+    align-content: center;
+}
+
+.services .section-heading .line-dec {
+    margin: 0 auto;
+}
+
+.services .section-heading p {
+    width: 60%;
+    margin: 1.5rem auto;
+}
+
+.services .naccs {
+    position: relative;
+    z-index: 1;
+}
+
+.services .icon {
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.services .naccs .menu div h4 {
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 400;
+    width: 100%;
+}
+
+.services .icon img {
+    margin-bottom: 10px;
+    max-width: 60px;
+    min-width: 60px;
+}
+
+.services .naccs .menu {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.services .naccs .menu div {
+    color: #2a2a2a;
+    margin: 0px;
+    width: 15%;
+    font-size: 20px;
+    font-weight: 700;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    border-radius: 15px;
+    transition: 1s all cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.services .naccs .menu div .thumb {
+    display: inline-block;
+    width: 100%;
+    padding: 30px 0px;
+    background-color: #fff;
+}
+
+.services .naccs .menu div.active {
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+}
+
+.services ul.nacc {
+    height: 100% !important;
+    position: relative;
+    min-height: 100%;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    transition: 0.5s all cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.services ul.nacc li {
+    opacity: 0;
+    transform: translateX(-50px);
+    position: absolute;
+    list-style: none;
+    transition: 1s all cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.services ul.nacc li.active {
+    transition-delay: 0.3s;
+    position: relative;
+    z-index: 2;
+    opacity: 1;
+    transform: translateX(0px);
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 80px 100px 50px 100px;
+}
+
+.services ul.nacc li {
+    width: 100%;
+}
+
+.services ul.nacc li .right-image img {
+    max-width: 420px;
+    float: right;
+    border-radius: 1rem;
+}
+
+.services .nacc .thumb h4 {
+    color: #2a2a2a;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 35px;
+    margin-bottom: 25px;
+}
+
+.services .nacc .thumb .main-white-button {
+    text-align: right;
+    margin-top: 40px;
+}
+
+.services .nacc .thumb .main-white-button a {
+    background-color: #8d99af;
+    color: #fff;
+}
+
+.services .nacc .thumb .main-white-button a i {
+    background-color: #fff;
+    color: #8d99af;
+}
+
+.services .left-text h4 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #fa65b1 !important;
+}
+
+.services .left-text p {
+    margin-bottom: 1rem;
+}
+
+.nacc .ticks-list span {
+    display: inline-block;
+    opacity: 1;
+    margin-right: 45px;
+    margin-bottom: 1rem;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+
+
+/*************************/
+/*        Travel         */
+/*************************/
+.our-portfolio {
+    font-family: 'Noto Sans Thai', sans-serif;
+    font-weight: 400;
+    padding-top: 130px;
+    overflow: hidden;
+    position: relative;
+}
+
+.our-portfolio:before {
+    content: '';
+    background-image: url(assets/images/portfolio-right-dec.jpg);
+    background-repeat: no-repeat;
+    position: absolute;
+    right: 0;
+    top: 0px;
+    width: 414px;
+    height: 861px;
+    z-index: -1;
+}
+
+.our-portfolio:after {
+    content: '';
+    background-image: url(assets/images/portfolio-left-dec.jpg);
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 0;
+    top: 0px;
+    width: 677px;
+    height: 759px;
+    z-index: -1;
+}
+
+.our-portfolio .section-heading {
+    margin-bottom: 80px;
+}
+
+.our-portfolio .container-fluid {
+    padding-right: 15px;
+    padding-left: 15px;
+    position: relative;
+    z-index: 2;
+}
+
+#portfolio a{
+    text-decoration: none;
+}
+.our-portfolio .item {
+    position: relative;
+    z-index: 222;
+}
+
+.portfolio-item {
+    border-radius: 25px;
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
+    margin: 15px;
+}
+
+.portfolio-item .thumb {
+    position: relative;
+    border-radius: 50px;
+}
+
+.portfolio-item:hover .down-content h4,
+.portfolio-item:hover .down-content span {
+    color: #fa65b1;
+}
+
+.portfolio-item .thumb img {
+    border-top-right-radius: 23px;
+    border-top-left-radius: 23px;
+
+    overflow: hidden;
+}
+
+.portfolio-item .down-content {
+    background-color: #fff;
+    text-align: center;
+    padding: 18px 0px;
+    border-bottom-right-radius: 23px;
+    border-bottom-left-radius: 23px;
+}
+
+.portfolio-item .down-content h4 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #2a2a2a;
+    margin-bottom: 8px;
+    transition: all .3s;
+}
+
+.portfolio-item .down-content span {
+    font-size: 15px;
+    color: #afafaf;
+    transition: all .3s;
+}
+
+.our-portfolio .owl-nav {
+    display: inline-block!important;
+    position: absolute;
+    top: -125px;
+    right: 15%;
+    max-width: 1320px;
+}
+
+.our-portfolio .owl-nav .owl-next {
+    margin-left: 10px;
+}
+
+.our-portfolio .owl-nav span {
+    width: 46px;
+    height: 46px;
+    display: inline-block;
+    text-align: center;
+    line-height: 46px;
+    font-size: 30px;
+    background-color: #eee;
+    border-radius: 50%;
+    color: #fff;
+    transition: all 0.5s;
+}
+
+.our-portfolio .owl-nav span:hover {
+    color: #fff;
+    background-color: #fa65b1;
 }
