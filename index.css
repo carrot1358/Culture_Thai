@@ -1,3 +1,30 @@
+/*---------------------------------------
+  CUSTOM PROPERTIES ( VARIABLES )
+-----------------------------------------*/
+:root {
+    --white-color:                #FFFFFF;
+    --primary-color:              #FF4400;
+    --section-bg-color:           #f0f8ff;
+    --dark-color:                 #000000;
+    --grey-color:                 #d0d1d1;
+    --p-color:                    #717275;
+
+    --body-font-family:           'Inter', sans-serif;
+
+    --h5-font-size:               24px;
+    --p-font-size:                20px;
+    --copyright-text-font-size:   16px;
+    --product-link-font-size:     14px;
+    --custom-link-font-size:      12px;
+
+    --font-weight-thin:           100;
+    --font-weight-light:          300;
+    --font-weight-normal:         400;
+    --font-weight-bold:           700;
+    --font-weight-black:          900;
+}
+
+
 body nav {
     font-family: 'Noto Sans Thai', sans-serif;
     font-weight: 800;
@@ -14,6 +41,11 @@ body nav {
 
 #login-bt {
     border: 1px solid #ff0000;
+}
+
+#nav-bar {
+    position: sticky;
+    top: 0;
 }
 
 
@@ -70,56 +102,13 @@ header {
 }
 
 
-/*************************/
-/*        region         */
-/*************************/
-#info-region {
-    display: flex;
-    margin-bottom: 1rem;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-/ / border: 1 px solid #ff0000;
-}
 
-#region h1 {
-    margin-bottom: 1rem;
-    font-family: 'KoHo', sans-serif;
-    text-shadow: rgba(0, 0, 0, 0.73) 1px 1px 1px;
-    text-align: center;
-    font-size: 30px;
-}
 
-#info-region-p {
-    width: 60%;
-    font-family: 'Noto Sans Thai', sans-serif;
-    font-size: 15px;
-    text-align: center;
-}
 
-#region {
-    margin-top: 6rem;
-    margin-botton: 1rem;
-}
-
-.col {
-    display: flex;
-    margin-top: 4rem;
-    margin-bottom: 4rem;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-/ / border: 1 px solid #ff0000;
-}
-
-#nav-bar {
-    position: sticky;
-    top: 0;
-}
 
 
 /*************************/
-/*       Services        */
+/*        History        */
 /*************************/
 .services {
     font-family: 'Noto Sans Thai', sans-serif;
@@ -303,7 +292,41 @@ header {
     font-weight: 400;
 }
 
+/*************************/
+/*      HOW TO MAKE      */
+/*************************/
+.about{
+    font-family: 'Noto Sans Thai', sans-serif;
+    font-weight: 400;
+    padding-top: 150px;
+    padding-bottom: 120px;
+    position: relative;
+    z-index: 1;
+}
+.about .mb-5{
+    font-size: 25px;
+    font-weight: bold;
+}
+.about .nav-pills .nav-item {
+    width: 100%;
+}
 
+.about .nav-pills .nav-link {
+    color: var(--grey-color);
+    font-size: 18px;
+    font-weight: var(--font-weight-bold);
+    border-left: 1px solid var(--grey-color);
+    border-radius: 0;
+    padding-right: 0;
+}
+
+.about .nav-pills .nav-link:hover,
+.about .nav-pills .nav-link.active,
+.about .nav-pills .show>.nav-link {
+    background: transparent;
+    border-left-color: var(--primary-color);
+    color: var(--primary-color);
+}
 
 /*************************/
 /*        Travel         */
@@ -432,4 +455,104 @@ header {
 .our-portfolio .owl-nav span:hover {
     color: #fff;
     background-color: #fa65b1;
+}
+
+
+/*************************/
+/*        Advice         */
+/*************************/
+.service_section {
+    font-family: 'Noto Sans Thai', sans-serif;
+    font-weight: 400;
+    padding-top: 8rem;
+    text-align: center;
+}
+
+.service_section .heading_container {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+.service_section .heading_container h2 {
+    font-weight: 800;
+    font-size: 25px;
+}
+
+.service_section .service_container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    padding: 35px 0;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.service_section .service_container .box {
+    margin: 25px 1%;
+    -ms-flex-preferred-size: 31%;
+    flex-basis: 31%;
+    padding: 35px 25px 25px;
+    border-radius: 15px;
+    -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15);
+    border-top: 15px solid transparent;
+    overflow: hidden;
+    -webkit-transition: all .1s;
+    transition: all .1s;
+}
+
+.service_section .service_container .box .img-box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 125px;
+}
+
+.service_section .service_container .box .img-box img {
+    width: 90px;
+}
+
+.service_section .service_container .box .detail-box {
+    margin-top: 25px;
+}
+
+.service_section .service_container .box .detail-box h5 {
+    color: #2e0e5f;
+    font-weight: 600;
+    position: relative;
+}
+
+.service_section .service_container .box:hover, .service_section .service_container .box.active {
+    border-top: 15px solid #512a97;
+}
+
+.service_section .btn-box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.service_section .btn-box a {
+    display: inline-block;
+    padding: 10px 35px;
+    background-color: #4b208c;
+    color: #ffffff;
+    border-radius: 35px;
+}
+
+.service_section .btn-box a:hover {
+    background-color: #5625a1;
 }

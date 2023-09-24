@@ -207,7 +207,7 @@
                                                     </div>
                                                     <div class="col-lg-6 align-self-center">
                                                         <div class="right-image">
-                                                            <img src="assets/images/history/history3.jpg" alt="" ">
+                                                            <img src="assets/images/history/content/culture.jpg" alt="" ">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -234,7 +234,7 @@
                                                     </div>
                                                     <div class="col-lg-6 align-self-center">
                                                         <div class="right-image">
-                                                            <img src="assets/images/history/history1.jpg" alt="">
+                                                            <img src="assets/images/history/content/Buddhism.jpg" alt="">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -258,7 +258,7 @@
                                                     </div>
                                                     <div class="col-lg-6 align-self-center">
                                                         <div class="right-image">
-                                                            <img src="assets/images/history/history2.jpg" alt="">
+                                                            <img src="assets/images/history/content/Geograpy.jpg" alt="">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -276,6 +276,268 @@
 </div>
 
 
+<!-------------------->
+<!--     Advice     -->
+<!-------------------->
+<section class="service_section layout_padding">
+    <div class="container">
+        <div class="heading_container">
+            <h2>
+                คำแนะนำ เพื่อป้องกันอุบัติเหตุ
+            </h2>
+            <img src="images/plug.png" alt="">
+        </div>
+
+        <div class="service_container">
+            <div class="box">
+                <div class="img-box">
+                    <img src="assets/images/advice/river.png" class="img1" alt="">
+                </div>
+                <div class="detail-box">
+                    <h5>
+                        อย่าใกล้
+                    </h5>
+                    <p>
+                        อย่ายืนใกล้ขอบบ่อ
+                    </p>
+                </div>
+            </div>
+            <div class="box active">
+                <div class="img-box">
+                    <img src="assets/images/advice/dollar.png" class="img1" alt="">
+                </div>
+                <div class="detail-box">
+                    <h5>
+                        อย่าเก็บ
+                    </h5>
+                    <p>
+                        อย่าลงน้ำไปเก็บเงินในกระทง
+                    </p>
+                </div>
+            </div>
+            <div class="box">
+                <div class="img-box">
+                    <img src="assets/images/advice/manbowing.png" class="img1" alt="">
+                </div>
+                <div class="detail-box">
+                    <h5>
+                        อย่าก้ม
+                    </h5>
+                    <p>
+                        อย่าก้มไปลอยกระทง
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-------------------->
+<!--  HOW TO MAKE   -->
+<!-------------------->
+<section class="about section-padding">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-12 text-center">
+                <h2 class="mb-5">วิธีการทำกระทงแบบง่ายๆ</h2>
+            </div>
+
+            <div class="col-lg-2 col-12 mt-auto mb-auto">
+                <ul class="nav nav-pills mb-5 mx-auto justify-content-center align-items-center" id="pills-tab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#form-1" type="button" role="tab" aria-controls="form-1" aria-selected="true">แบบที่ 1</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#form-2" type="button" role="tab" aria-controls="form-2" aria-selected="true">แบบที่ 2</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#form-3" type="button" role="tab" aria-controls="form-3" aria-selected="true">แบบที่ 3</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#form-4" type="button" role="tab" aria-controls="form-4" aria-selected="true">แบบที่ 4</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#form-5" type="button" role="tab" aria-controls="form-5" aria-selected="true">แบบที่ 5</button>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-lg-10 col-12">
+                <div class="tab-content mt-2" id="pills-tabContent">
+                    <div class="tab-pane fade show active" id="form-1" role="tabpanel" aria-labelledby="form-1-tab">
+
+                        <div class="row">
+                            <div class="col-lg-7 col-12">
+                                <div class="ratio ratio-16x9">
+                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/5oN73IbMIBY?si=4-_1vOx3PATACv3Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-5 col-12">
+                                <div class="d-flex flex-column h-100 ms-lg-4 mt-lg-0 mt-5">
+                                    <h4 class="mb-3">อุปกรณ์ที่ต้องเตรียม</h4>
+                                    <ul>
+                                        <li>ใบตอง กว้าง 3.5 ซม. ยาว 13 ซม. <p>และ กว้าง 5 ซม. ยาว 17 ซม.</p></li>
+                                        <li>ต้นกล้วยตัดเป็นแว่น 1 อัน</li>
+                                        <li>ดอกแพงพวย</li>
+                                        <li>ดอกพุดบาน</li>
+                                        <li>กรรไกร</li>
+                                        <li>เข็มหมุด</li>
+                                        <li>แม็กเย็บ</li>
+                                        <li>ธูป เทียน</li>
+                                    </ul>
+                                    <div class="mt-2 mt-lg-auto">
+                                        Credit Clip
+                                        <a href="https://www.youtube.com/channel/UCO9zryhd6fFS58NpR0bg8BQ" class="custom-link mb-2">
+                                            Rammy DIY
+                                            <i class="bi-arrow-right ms-2"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="form-2" role="tabpanel" aria-labelledby="form-2-tab">
+
+                        <div class="row">
+                            <div class="col-lg-7 col-12">
+                                <div class="ratio ratio-16x9">
+                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/hJH9SruPL98?si=KQ0uClTcHnf4OnWD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-5 col-12">
+                                <div class="d-flex flex-column h-100 ms-lg-4 mt-lg-0 mt-5">
+                                    <h4 class="mb-3">อุปกรณ์ที่ต้องเตรียม</h4>
+                                    <ul>
+                                        <li>ใบตอง กว้าง 2.5 นิ้ว ยาว 7.5 นิ้ว</li>
+                                        <li>ต้นกล้วยตัดเป็นแว่น 1 อัน</li>
+                                        <li>ดอกต้อยติ่ง</li>
+                                        <li>ดอกพุด</li>
+                                        <li>ดอกบานไม่รู้โรย</li>
+                                        <li>กรรไกร</li>
+                                        <li>แม็กเย็บ</li>
+                                        <li>ธูป เทียน</li>
+                                    </ul>
+                                    <div class="mt-2 mt-lg-auto">
+                                        Credit Clip
+                                        <a href="https://www.youtube.com/channel/UCO9zryhd6fFS58NpR0bg8BQ" class="custom-link mb-2">
+                                            Rammy DIY
+                                            <i class="bi-arrow-right ms-2"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="form-3" role="tabpanel" aria-labelledby="form-3-tab">
+
+                        <div class="row">
+                            <div class="col-lg-7 col-12">
+                                <div class="ratio ratio-16x9">
+                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/H4JFCtIdSX4?si=QPY9qnyEo92G_bXo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-5 col-12">
+                                <div class="d-flex flex-column h-100 ms-lg-4 mt-lg-0 mt-5">
+                                    <h4 class="mb-3">อุปกรณ์ที่ต้องเตรียม</h4>
+                                    <ul>
+                                        <li>ใบตอง กว้าง 2 นิ้ว ยาว 7 นิ้ว</li>
+                                        <li>ต้นกล้วยตัดเป็นแว่น 1 อัน</li>
+                                        <li>ดอกพุด</li>
+                                        <li>ดอกบานไม่รู้โรย</li>
+                                        <li>กรรไกร</li>
+                                        <li>แม็กเย็บ</li>
+                                        <li>ธูป เทียน</li>
+                                    </ul>
+                                    <div class="mt-2 mt-lg-auto">
+                                        Credit Clip
+                                        <a href="https://www.youtube.com/channel/UCO9zryhd6fFS58NpR0bg8BQ" class="custom-link mb-2">
+                                            Rammy DIY
+                                            <i class="bi-arrow-right ms-2"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="form-4" role="tabpanel" aria-labelledby="form-4-tab">
+
+                        <div class="row">
+                            <div class="col-lg-7 col-12">
+                                <div class="ratio ratio-16x9">
+                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/wiHUIhk70tg?si=U79bXWq-05aU46z7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-5 col-12">
+                                <div class="d-flex flex-column h-100 ms-lg-4 mt-lg-0 mt-5">
+                                    <h4 class="mb-3">อุปกรณ์ที่ต้องเตรียม</h4>
+                                    <ul>
+                                        <li>ใบตอง กว้าง 6 ซม. ยาว 19 ซม.</li>
+                                        <li>ต้นกล้วยตัดเป็นแว่น 1 อัน</li>
+                                        <li>ดอกพุด</li>
+                                        <li>ดอกดาวเรือง</li>
+                                        <li>กรรไกร</li>
+                                        <li>แม็กเย็บ</li>
+                                        <li>เข็มหมุด</li>
+                                        <li>ธูป เทียน</li>
+                                    </ul>
+                                    <div class="mt-2 mt-lg-auto">
+                                        Credit Clip
+                                        <a href="https://www.youtube.com/channel/UCO9zryhd6fFS58NpR0bg8BQ" class="custom-link mb-2">
+                                            Rammy DIY
+                                            <i class="bi-arrow-right ms-2"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="form-5" role="tabpanel" aria-labelledby="form-2-tab">
+
+                        <div class="row">
+                            <div class="col-lg-7 col-12">
+                                <div class="ratio ratio-16x9">
+                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/_D_g2N921zw?si=RzdkjnZF-FMBgg1g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-5 col-12">
+                                <div class="d-flex flex-column h-100 ms-lg-4 mt-lg-0 mt-5">
+                                    <h4 class="mb-3">อุปกรณ์ที่ต้องเตรียม</h4>
+                                    <ul>
+                                        <li>ใบตองกว้าง</li>
+                                        <li>ต้นกล้วยตัดเป็นแว่น</li>
+                                        <li>กรรไกร</li>
+                                        <li>แม็กเย็บ</li>
+                                        <li>ดอกบานไม่รู้โรย</li>
+                                        <li>ดอกพุด</li>
+                                        <li>ธูป เทียน</li>
+                                    </ul>
+                                    <div class="mt-2 mt-lg-auto">
+                                        Credit Clip
+                                        <a href="https://www.youtube.com/channel/UCO9zryhd6fFS58NpR0bg8BQ" class="custom-link mb-2">
+                                            Rammy DIY
+                                            <i class="bi-arrow-right ms-2"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-------------------->
+<!--    Travel      -->
+<!-------------------->
 <div id="portfolio" class="our-portfolio section">
     <div class="container">
         <div class="row">
@@ -375,6 +637,8 @@
         </div>
     </div>
 </div>
+
+
 
 
 <!-- Link Bootstrap JS -->
