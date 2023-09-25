@@ -3,7 +3,7 @@
 session_start();
 // Check if the form is submitted
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    include "../server.php";
+    include "../../server.php";
     // Retrieve user input
     $username = $_POST['username'];
     $password = $_POST['password'];
@@ -19,13 +19,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Authentication successful, redirect to the dashboard or another page
         $_SESSION['user_logged_in'] = true;
         $_SESSION['user_name'] = $username;
-        $_SESSION['user_id'] = $result->fetch_assoc()['ID'];
-        $_SESSION['user_firstname'] = $result->fetch_assoc()['first_name'];
-        header("Location: ../index.php");
+        $_SESSION['user_id'] = $result->fetch_assoc()['user_id'];
+        //$_SESSION['user_firstname'] = $result->fetch_assoc()['first_name'];
+        $_SESSION['message'] = "Login successful.";
+        header("refresh:0; url=./login.php");
         exit();
     } else {
         // Authentication failed, display an error message
-        $error_message = "Invalid username or password";
+        $_SESSION['message'] = "Invalid username or password";
+        header("refresh:0; url=./login.php");
     }
 
     // Close the database connection

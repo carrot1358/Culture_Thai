@@ -374,7 +374,8 @@ header {
     z-index: 2;
 }
 
-#portfolio a{
+
+.our-portfolio a{
     text-decoration: none;
 }
 .our-portfolio .item {

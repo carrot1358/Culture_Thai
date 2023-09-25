@@ -2,30 +2,13 @@
 //get user firstname
 session_start();
 $user_id = $_SESSION['user_id'];
-$conn = new mysqli('localhost', 'root', '', 'users');
-if ($conn->connect_error) {
-    die("<script> alert('Connect DATABASE (users) failed ...'); </script> " . $conn->connect_error);
-}
-$sql_userfirst_name = "SELECT * FROM user WHERE id = '$user_id'";
+require "../../server.php";
+$sql_userfirst_name = "SELECT * FROM users WHERE user_id = '$user_id'";
 $result_userfirst_name = $conn->query($sql_userfirst_name);
 $userfirst_name = $result_userfirst_name->fetch_assoc();
 
-$user_first_name = $userfirst_name['first_name'];
-$user_id = $userfirst_name['ID'];
+$user_id = $userfirst_name['user_id'];
 
-//insert post to database
-$servername = "localhost";
-$dbusername = "root";
-$dbpassword = "";
-$dbname = "webboard";
-
-// Create connection
-$conn = new mysqli($servername, $dbusername, $dbpassword, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-    die("<script> alert('Connect DATABASE $dbname failed ...'); </script> " . $conn->connect_error);
-}
 // Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Retrieve and sanitize form data
@@ -33,11 +16,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $content = mysqli_real_escape_string($conn, $_POST['content']);
     $category = mysqli_real_escape_string($conn, $_POST['category']);
 
-    $query = "INSERT INTO posts (title, author, content, categorie, timestamp , author_id) VALUES ('$title', '$user_first_name', '$content', '$category', NOW(), '$user_id')";
+    $query = "INSERT INTO posts (title, content, categorie, timestamp , author_id) VALUES ('$title', '$content', '$category', NOW(), '$user_id')";
 
     if ($conn->query($query) === TRUE) {
         echo "<script> alert('โพสต์แล้ว !!'); </script>";
-        header("Location: ../webboard-region/board-home.php");
+        header("Location: ../board-home.php");
     } else {
         echo "Error creating post: " . $conn->error;
     }
@@ -58,8 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
 <?php
 $user_id = $_SESSION['user_id'];
-$conn = new mysqli('localhost', 'root', '', 'users');
-$sql_userfirst_name = "SELECT first_name FROM user WHERE id = '$user_id'";
+$sql_userfirst_name = "SELECT first_name FROM users WHERE user_id = '$user_id'";
 $result_userfirst_name = $conn->query($sql_userfirst_name);
 $userfirst_name = $result_userfirst_name->fetch_assoc();
 $username = $userfirst_name['first_name'];
@@ -70,7 +52,7 @@ $username = $userfirst_name['first_name'];
 $landing_path = "../../index.php";
 $homeboard_path = "../webboard-region/board-home.php";
 $login_path = "../../Login/login.html";
-$register_path = "../../../Register/register.html";
+$register_path = "../../../Register/register.php";
 
 $profile_path = "../../Profile/profile.php";
 $my_post_path = "../../Profile/my-post.php";

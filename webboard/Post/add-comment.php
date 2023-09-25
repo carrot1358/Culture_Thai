@@ -1,17 +1,5 @@
 <?php
-// Include your database connection code here if not already included.
-$servername = "localhost";
-$dbusername = "root";
-$dbpassword = "";
-$dbname = "webboard";
-
-// Create connection
-$conn = new mysqli($servername, $dbusername, $dbpassword, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-    die("<script> alert('Connect DATABASE failed ...'); </script> " . $conn->connect_error);
-}
+require "../../server.php";
 
 // Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

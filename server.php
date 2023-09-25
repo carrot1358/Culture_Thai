@@ -3,7 +3,7 @@
     $servername = "localhost";
     $dbusername = "root";
     $dbpassword = "";
-    $dbname = "webboard";
+    $dbname = "culture_thai";
 
     // Create connection
     $conn = new mysqli($servername, $dbusername, $dbpassword, $dbname);

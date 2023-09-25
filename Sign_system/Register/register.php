@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,11 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration Page</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <?php include($_SERVER['DOCUMENT_ROOT'] . '\Template\head_include.php'); ?>
     <style>
         /* Custom CSS styles */
         body {
             background-color: #f0f0f0;
         }
+
         .registration-container {
             max-width: 400px;
             margin: 0 auto;
@@ -21,10 +24,11 @@
     </style>
 </head>
 <body>
+
 <div class="container mt-5">
     <div class="registration-container">
         <h2 class="text-center">Register</h2>
-        <form action="register.php" method="POST">
+        <form action="register_query.php" method="POST">
             <div class="mb-3">
                 <label for="username" class="form-label">Username</label>
                 <input type="text" class="form-control" id="username" name="username" required>
@@ -49,21 +53,7 @@
                 </div>
             </div>
 
-            <script>
-                // JavaScript to handle phone number input validation
-                document.getElementById("phone").addEventListener("input", function() {
-                    // Remove all non-digit characters
-                    const phoneNumber = this.value.replace(/\D/g, "");
 
-                    // Limit the phone number to 9 digits
-                    const maxDigits = 9;
-                    if (phoneNumber.length > maxDigits) {
-                        this.value = phoneNumber.slice(0, maxDigits);
-                    } else {
-                        this.value = phoneNumber;
-                    }
-                });
-            </script>
 
             <div class="mb-3">
                 <label for="first_name" class="form-label">First Name</label>
@@ -83,5 +73,53 @@
         </form>
     </div>
 </div>
+
+<?php
+
+if (isset($_SESSION['message'])) {
+    if($_SESSION['message'] == "Username or email is already in use."){
+        echo '<script>';
+        echo 'Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "' . $_SESSION['message'] . '",
+            showConfirmButton: false,
+            timer: 1000
+            })';
+        echo '</script>';
+        unset($_SESSION['message']);
+    }else if($_SESSION['message'] == "Registration successful."){
+        echo '<script>';
+        echo 'Swal.fire({
+            icon: "success",
+            title: "Success",
+            text: "' . $_SESSION['message'] . '",
+            showConfirmButton: false,
+            timer: 1000
+            })';
+        echo '</script>';
+        unset($_SESSION['message']);
+        header("refresh:0; url=../Login/login.php");
+    }
+}
+?>
+
+<script>
+    // JavaScript to handle phone number input validation
+    document.getElementById("phone").addEventListener("input", function () {
+        // Remove all non-digit characters
+        const phoneNumber = this.value.replace(/\D/g, "");
+
+        // Limit the phone number to 9 digits
+        const maxDigits = 9;
+        if (phoneNumber.length > maxDigits) {
+            this.value = phoneNumber.slice(0, maxDigits);
+        } else {
+            this.value = phoneNumber;
+        }
+    });
+</script>
+
+
 </body>
 </html>

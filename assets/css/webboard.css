@@ -1,0 +1,13 @@
+/* statistics */
+.container .row .col-lg-4 .Statistics{
+    border: solid 1px #ccc;
+    border-radius: 10px;
+    align-content: center;
+    justify-content: center;
+    
+}
+.container .row .col-lg-4 .Statistics h4{
+    padding: 1rem 0px;
+    margin: 0;
+    text-align: center;
+}

@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Profile</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
     <style>
         /* Custom CSS styles */
         body {
@@ -24,12 +25,12 @@
 <body>
 <?php
 session_start();
+require "../server.php";
 
 $user_logged_in = $_SESSION['user_logged_in'];
 $user_id = $_SESSION['user_id'];
 
-$conn = new mysqli("localhost", "root", "", "users");
-$sql_userdetail = "SELECT * FROM user WHERE id = '$user_id'";
+$sql_userdetail = "SELECT * FROM users WHERE user_id = '$user_id'";
 
 $result_userdetail = $conn->query($sql_userdetail);
 $userdetail = $result_userdetail->fetch_assoc();
@@ -40,77 +41,11 @@ $old_phone = $userdetail['phone'];
 $old_first_name = $userdetail['first_name'];
 $old_last_name = $userdetail['last_name'];
 ?>
-<?php
-//nav path
-$landing_path = "../index.php";
-$homeboard_path = "../webboard/webboard-region/board-home.php";
-$login_path = "../Login/login.html";
-$register_path = "../Register/register.html";
 
-$profile_path = "./profile.php";
-$my_post_path = "./my-post.php";
-$logout_path = "./logout.php";
-?>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container">
-        <a class="navbar-brand" href="<?= $landing_path ?>">ศิลปวัฒนธรรมไทย</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto ">
-                <li class="nav-item">
-                    <a class="nav-link" href="<?= $homeboard_path ?>">Home</a>
-                </li>
-                <?php
+<!--include navbar-->
+<?php include ($_SERVER['DOCUMENT_ROOT'] . '\Template\navbar-webboard.php'); ?>
 
-                // Define a custom error handler function to convert warnings to exceptions
-                function customErrorHandler($errno, $errstr, $errfile, $errline)
-                {
-                    throw new ErrorException($errstr, 0, $errno, $errfile, $errline);
-                }
 
-                // Set the custom error handler
-                set_error_handler("customErrorHandler");
-
-                try {
-                    $user_logged_in = $_SESSION['user_logged_in'];
-                    $user_name = $_SESSION['user_name'];
-                } catch (ErrorException  $e) {
-                    $user_logged_in = false;
-                }
-                restore_error_handler();
-                if ($user_logged_in) {
-                    // Display the user's name instead of login and register buttons
-                    // Display the user's name as a dropdown
-
-                    echo '<li class="nav-item dropdown">';
-                    echo '<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">';
-                    echo 'Welcome, ' . $user_name;
-                    echo '</a>';
-                    echo '<div class="dropdown-menu" aria-labelledby="navbarDropdown">';
-                    echo '<a class="dropdown-item" href="' . $profile_path . '">Profile</a>';
-                    echo '<a class="dropdown-item" href="' . $my_post_path . '">My Posts</a>';
-                    echo '<hr style="margin: 2px">';
-                    echo '<a class="dropdown-item" href="' . $logout_path . '">Logout</a>';
-
-                    echo '</div>';
-                    echo '</li>';
-                } else {
-                    // Display login and register buttons
-                    echo '<li class="nav-item">';
-                    echo '<a class="nav-link" href="' . $login_path . '">Login</a>';
-                    echo '</li>';
-                    echo '<li class="nav-item">';
-                    echo '<a class="nav-link" href="' . $register_path . '">Register</a>';
-                    echo '</li>';
-                }
-                ?>
-            </ul>
-        </div>
-    </div>
-</nav>
 <div class="container mt-5">
     <div class="profile-container">
         <h2 class="text-center"><?=$old_username?>'s Profile</h2>
@@ -148,6 +83,9 @@ $logout_path = "./logout.php";
         </form>
     </div>
 </div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

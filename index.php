@@ -4,17 +4,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Culture Thai</title>
+
+    <?php include ($_SERVER['DOCUMENT_ROOT']."\Template\head_include.php"); ?>
     <!-- Link Bootstrap stylesheet -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 
     <!-- Link CSS stylesheet -->
     <link rel="stylesheet" type="text/css" href="index.css">
-
-    <!-- Link Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=KoHo:ital,wght@1,700&family=Noto+Sans+Thai:wght@200;400;800&display=swap" rel="stylesheet">
 
     <!-- Additional CSS Files -->
     <link rel="stylesheet" href="assets/css/fontawesome.css">
@@ -40,93 +37,9 @@
 <!-------------------->
 <!-- Navigation Bar -->
 <!-------------------->
-<nav class="navbar navbar-expand-lg bg-body-tertiary" id="nav-bar">
-    <div class="container-fluid">
-        <!--The Name of Websize-->
-        <a class="navbar-brand" href="#">ประเพณีลอยกระทง</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#services">ประวัติ</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">ความสำคัญ</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">คำแนะนำ</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                       aria-expanded="false">
-                        กิจกรรม
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">การท่องเที่ยว</a></li>
-                        <li><a class="dropdown-item" href="#">เหตุการณ์</a></li>
-                        <li><a class="dropdown-item" href="#">สถานที่</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./webboard/webboard-region/board-home.php"><b>เว็บบอร์ด</b></a>
-                </li>
-            </ul>
-
-        </div>
-        <div class="d-flex">
-            <?php
-
-            $loginpath = "Login/Login.html";
-            $register_path = "Register/register.html";
-            $logout_path = "Logout/logout.php";
-            $profile_path = "Profile/profile.php";
-            $my_post_path = "./Profile/my-post.php";
-            // Check if the user is logged in
-            session_start();
-            // Define a custom error handler function to convert warnings to exceptions
-            function customErrorHandler($errno, $errstr, $errfile, $errline)
-            {
-                throw new ErrorException($errstr, 0, $errno, $errfile, $errline);
-            }
-
-            // Set the custom error handler
-            set_error_handler("customErrorHandler");
-
-            try {
-                $user_logged_in = $_SESSION['user_logged_in'];
-                $user_name = $_SESSION['user_name'];
-            } catch (ErrorException  $e) {
-                $user_logged_in = false;
-            }
-            restore_error_handler();
-            if ($user_logged_in) {
-                // Display the user's name instead of login and register buttons
-                // Display the user's name as a dropdown
-                echo '<div class="btn-group">';
-                echo '<button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"> Welcome, ' . $user_name . ' </button>';
-                echo '<ul class="dropdown-menu dropdown-menu-end">';
-                echo '<li><a class="dropdown-item" href="' . $profile_path . '">Profile</a></li>';
-                echo '<li><a class="dropdown-item" href="' . $my_post_path . '">My Posts</a></li>';
-                echo '<hr>';
-                echo '<li><a class="dropdown-item" href="' . $logout_path . '">Logout</a></li>';
-                echo '</ul>';
-                echo '</div>';
-            } else {
-                // Display login and register buttons
-                echo '<a href="' . $loginpath . '" class="btn btn-outline-dark">Login</a>';
-                echo '<a href="' . $register_path . '" class="btn btn-outline-dark">Register</a>';
-            }
-            ?>
-        </div>
-    </div>
-</nav>
+<?php
+include "Template/navbar-landing.php";
+?>
 
 <!-------------------->
 <!--     Header     -->
@@ -279,7 +192,7 @@
 <!-------------------->
 <!--     Advice     -->
 <!-------------------->
-<section class="service_section layout_padding">
+<section id='advice-section' class="service_section layout_padding">
     <div class="container">
         <div class="heading_container">
             <h2>
@@ -335,7 +248,7 @@
 <!-------------------->
 <!--  HOW TO MAKE   -->
 <!-------------------->
-<section class="about section-padding">
+<section id='howtomake-section'class="about section-padding">
     <div class="container">
         <div class="row">
 
@@ -538,7 +451,7 @@
 <!-------------------->
 <!--    Travel      -->
 <!-------------------->
-<div id="portfolio" class="our-portfolio section">
+<div id="Travel-section" class="our-portfolio section">
     <div class="container">
         <div class="row">
             <div class="col-lg-5">
