@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Culture Thai</title>
 
-    <?php include ($_SERVER['DOCUMENT_ROOT']."\Template\head_include.php"); ?>
+    <?php include($_SERVER['DOCUMENT_ROOT'] . "\Template\head_include.php"); ?>
     <!-- Link Bootstrap stylesheet -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
@@ -110,17 +110,20 @@ include "Template/navbar-landing.php";
                                                     <div class="col-lg-6 align-self-center">
                                                         <div class="left-text">
                                                             <h4>รากฐานทางวัฒนธรรม</h4>
-                                                            <p>&emsp;มีทฤษฎีบางรายที่เชื่อว่าประเพณีลอยกระทงมีมาจากประเพณีทางวัฒนธรรมเก่าแก่ ของไทย
-                                                                ที่ฉลองเข้ารอบการเก็บเกี่ยวของนานาชาติ โดยการลอยกระทงเป็นส่วนหนึ่งของการเฉลิมฉลองฤดู
+                                                            <p>&emsp;มีทฤษฎีบางรายที่เชื่อว่าประเพณีลอยกระทงมีมาจากประเพณีทางวัฒนธรรมเก่าแก่
+                                                                ของไทย
+                                                                ที่ฉลองเข้ารอบการเก็บเกี่ยวของนานาชาติ
+                                                                โดยการลอยกระทงเป็นส่วนหนึ่งของการเฉลิมฉลองฤดู
                                                                 ใบไม้ร่วงในเขตชนบท
-                                                                </p>
-                                                            
-                                                            
+                                                            </p>
+
+
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-6 align-self-center">
                                                         <div class="right-image">
-                                                            <img src="assets/images/history/content/culture.jpg" alt="" ">
+                                                            <img src="assets/images/history/content/culture.jpg" alt=""
+                                                            ">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -147,7 +150,8 @@ include "Template/navbar-landing.php";
                                                     </div>
                                                     <div class="col-lg-6 align-self-center">
                                                         <div class="right-image">
-                                                            <img src="assets/images/history/content/Buddhism.jpg" alt="">
+                                                            <img src="assets/images/history/content/Buddhism.jpg"
+                                                                 alt="">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -162,16 +166,21 @@ include "Template/navbar-landing.php";
                                                         <div class="left-text">
                                                             <h4>รากฐานทางสภาพภูมิศาสตร์</h4>
                                                             <p>&emsp;บางคนก็เชื่อว่าการลอยกระทงอาจมีความเชื่อมโยงกับสภาพภูมิศาสตร์ของ
-                                                                ประเทศไทย โดยประเพณีนี้จะถูกฉลองในเวลาที่น้ำในแม่น้ำและคลองน่าสวยงาม ทำให้นักท่องเที่ยวและ
+                                                                ประเทศไทย
+                                                                โดยประเพณีนี้จะถูกฉลองในเวลาที่น้ำในแม่น้ำและคลองน่าสวยงาม
+                                                                ทำให้นักท่องเที่ยวและ
                                                                 ชาวบ้านสามารถลอยกระทงได้ง่ายและสวยงามที่สุด
-                                                                การลอยกระทงเป็นประเพณีที่มีความสวยงามและมีความสมบูรณ์ทางวัฒนธรรม มันส่งเสริมความรักและความ
-                                                                ปรารถนาดีให้กับผู้ร่วมประเพณี และเป็นเวลาที่สำคัญในการเฉลิมฉลองวันหยุดสำคัญของประเทศไทยและใน
+                                                                การลอยกระทงเป็นประเพณีที่มีความสวยงามและมีความสมบูรณ์ทางวัฒนธรรม
+                                                                มันส่งเสริมความรักและความ
+                                                                ปรารถนาดีให้กับผู้ร่วมประเพณี
+                                                                และเป็นเวลาที่สำคัญในการเฉลิมฉลองวันหยุดสำคัญของประเทศไทยและใน
                                                                 ชุมชนทั่วไปทั่วโลกที่มีชนิดอย่างน้อยของประชากรไทยอยู่ในพื้นที่นั้น</p>
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-6 align-self-center">
                                                         <div class="right-image">
-                                                            <img src="assets/images/history/content/Geograpy.jpg" alt="">
+                                                            <img src="assets/images/history/content/Geograpy.jpg"
+                                                                 alt="">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -248,7 +257,7 @@ include "Template/navbar-landing.php";
 <!-------------------->
 <!--  HOW TO MAKE   -->
 <!-------------------->
-<section id='howtomake-section'class="about section-padding">
+<section id='howtomake-section' class="about section-padding">
     <div class="container">
         <div class="row">
 
@@ -257,21 +266,33 @@ include "Template/navbar-landing.php";
             </div>
 
             <div class="col-lg-2 col-12 mt-auto mb-auto">
-                <ul class="nav nav-pills mb-5 mx-auto justify-content-center align-items-center" id="pills-tab" role="tablist">
+                <ul class="nav nav-pills mb-5 mx-auto justify-content-center align-items-center" id="pills-tab"
+                    role="tablist">
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#form-1" type="button" role="tab" aria-controls="form-1" aria-selected="true">แบบที่ 1</button>
+                        <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill"
+                                data-bs-target="#form-1" type="button" role="tab" aria-controls="form-1"
+                                aria-selected="true">แบบที่ 1
+                        </button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#form-2" type="button" role="tab" aria-controls="form-2" aria-selected="true">แบบที่ 2</button>
+                        <button class="nav-link" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#form-2"
+                                type="button" role="tab" aria-controls="form-2" aria-selected="true">แบบที่ 2
+                        </button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#form-3" type="button" role="tab" aria-controls="form-3" aria-selected="true">แบบที่ 3</button>
+                        <button class="nav-link" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#form-3"
+                                type="button" role="tab" aria-controls="form-3" aria-selected="true">แบบที่ 3
+                        </button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#form-4" type="button" role="tab" aria-controls="form-4" aria-selected="true">แบบที่ 4</button>
+                        <button class="nav-link" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#form-4"
+                                type="button" role="tab" aria-controls="form-4" aria-selected="true">แบบที่ 4
+                        </button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#form-5" type="button" role="tab" aria-controls="form-5" aria-selected="true">แบบที่ 5</button>
+                        <button class="nav-link" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#form-5"
+                                type="button" role="tab" aria-controls="form-5" aria-selected="true">แบบที่ 5
+                        </button>
                     </li>
                 </ul>
             </div>
@@ -283,7 +304,11 @@ include "Template/navbar-landing.php";
                         <div class="row">
                             <div class="col-lg-7 col-12">
                                 <div class="ratio ratio-16x9">
-                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/5oN73IbMIBY?si=4-_1vOx3PATACv3Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                    <iframe width="560" height="315"
+                                            src="https://www.youtube.com/embed/5oN73IbMIBY?si=4-_1vOx3PATACv3Y"
+                                            title="YouTube video player" frameborder="0"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                            allowfullscreen></iframe>
                                 </div>
                             </div>
 
@@ -302,7 +327,8 @@ include "Template/navbar-landing.php";
                                     </ul>
                                     <div class="mt-2 mt-lg-auto">
                                         Credit Clip
-                                        <a href="https://www.youtube.com/channel/UCO9zryhd6fFS58NpR0bg8BQ" class="custom-link mb-2">
+                                        <a href="https://www.youtube.com/channel/UCO9zryhd6fFS58NpR0bg8BQ"
+                                           class="custom-link mb-2">
                                             Rammy DIY
                                             <i class="bi-arrow-right ms-2"></i>
                                         </a>
@@ -316,7 +342,11 @@ include "Template/navbar-landing.php";
                         <div class="row">
                             <div class="col-lg-7 col-12">
                                 <div class="ratio ratio-16x9">
-                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/hJH9SruPL98?si=KQ0uClTcHnf4OnWD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                    <iframe width="560" height="315"
+                                            src="https://www.youtube.com/embed/hJH9SruPL98?si=KQ0uClTcHnf4OnWD"
+                                            title="YouTube video player" frameborder="0"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                            allowfullscreen></iframe>
                                 </div>
                             </div>
 
@@ -335,7 +365,8 @@ include "Template/navbar-landing.php";
                                     </ul>
                                     <div class="mt-2 mt-lg-auto">
                                         Credit Clip
-                                        <a href="https://www.youtube.com/channel/UCO9zryhd6fFS58NpR0bg8BQ" class="custom-link mb-2">
+                                        <a href="https://www.youtube.com/channel/UCO9zryhd6fFS58NpR0bg8BQ"
+                                           class="custom-link mb-2">
                                             Rammy DIY
                                             <i class="bi-arrow-right ms-2"></i>
                                         </a>
@@ -349,7 +380,11 @@ include "Template/navbar-landing.php";
                         <div class="row">
                             <div class="col-lg-7 col-12">
                                 <div class="ratio ratio-16x9">
-                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/H4JFCtIdSX4?si=QPY9qnyEo92G_bXo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                    <iframe width="560" height="315"
+                                            src="https://www.youtube.com/embed/H4JFCtIdSX4?si=QPY9qnyEo92G_bXo"
+                                            title="YouTube video player" frameborder="0"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                            allowfullscreen></iframe>
                                 </div>
                             </div>
 
@@ -367,7 +402,8 @@ include "Template/navbar-landing.php";
                                     </ul>
                                     <div class="mt-2 mt-lg-auto">
                                         Credit Clip
-                                        <a href="https://www.youtube.com/channel/UCO9zryhd6fFS58NpR0bg8BQ" class="custom-link mb-2">
+                                        <a href="https://www.youtube.com/channel/UCO9zryhd6fFS58NpR0bg8BQ"
+                                           class="custom-link mb-2">
                                             Rammy DIY
                                             <i class="bi-arrow-right ms-2"></i>
                                         </a>
@@ -381,7 +417,11 @@ include "Template/navbar-landing.php";
                         <div class="row">
                             <div class="col-lg-7 col-12">
                                 <div class="ratio ratio-16x9">
-                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/wiHUIhk70tg?si=U79bXWq-05aU46z7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                    <iframe width="560" height="315"
+                                            src="https://www.youtube.com/embed/wiHUIhk70tg?si=U79bXWq-05aU46z7"
+                                            title="YouTube video player" frameborder="0"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                            allowfullscreen></iframe>
                                 </div>
                             </div>
 
@@ -400,7 +440,8 @@ include "Template/navbar-landing.php";
                                     </ul>
                                     <div class="mt-2 mt-lg-auto">
                                         Credit Clip
-                                        <a href="https://www.youtube.com/channel/UCO9zryhd6fFS58NpR0bg8BQ" class="custom-link mb-2">
+                                        <a href="https://www.youtube.com/channel/UCO9zryhd6fFS58NpR0bg8BQ"
+                                           class="custom-link mb-2">
                                             Rammy DIY
                                             <i class="bi-arrow-right ms-2"></i>
                                         </a>
@@ -414,7 +455,11 @@ include "Template/navbar-landing.php";
                         <div class="row">
                             <div class="col-lg-7 col-12">
                                 <div class="ratio ratio-16x9">
-                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/_D_g2N921zw?si=RzdkjnZF-FMBgg1g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                    <iframe width="560" height="315"
+                                            src="https://www.youtube.com/embed/_D_g2N921zw?si=RzdkjnZF-FMBgg1g"
+                                            title="YouTube video player" frameborder="0"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                            allowfullscreen></iframe>
                                 </div>
                             </div>
 
@@ -432,7 +477,8 @@ include "Template/navbar-landing.php";
                                     </ul>
                                     <div class="mt-2 mt-lg-auto">
                                         Credit Clip
-                                        <a href="https://www.youtube.com/channel/UCO9zryhd6fFS58NpR0bg8BQ" class="custom-link mb-2">
+                                        <a href="https://www.youtube.com/channel/UCO9zryhd6fFS58NpR0bg8BQ"
+                                           class="custom-link mb-2">
                                             Rammy DIY
                                             <i class="bi-arrow-right ms-2"></i>
                                         </a>
@@ -550,8 +596,6 @@ include "Template/navbar-landing.php";
         </div>
     </div>
 </div>
-
-
 
 
 <!-- Link Bootstrap JS -->

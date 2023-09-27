@@ -55,9 +55,12 @@ if (isset($_GET['id'])) {
         <?php include($_SERVER['DOCUMENT_ROOT'] . '\Template\navbar-webboard.php'); ?>
 
         <!-------------------------->
-        <!-- Delete postbutton.js --->
-        <!--------------------------->
+        <!--     Java Script     --->
+        <!-------------------------->
         <script>
+            //--------------------
+            // Delete post button
+            //--------------------
             function delete_button(post_id) {
                 Swal.fire({
                     title: 'Are you sure?',
@@ -82,6 +85,92 @@ if (isset($_GET['id'])) {
                         setTimeout(function () {
                             window.location.href = './delete-post.php?id=' + post_id;
                         }, 2000); // 2000 milliseconds = 2 seconds
+                    } else {
+                        Swal.fire({
+                            title: 'Cancelled',
+                            text: 'Your imaginary file is safe :)',
+                            icon: 'error',
+                            showConfirmButton: false,
+                            timer: 1000
+                        })
+                    }
+                })
+            }
+            //--------------------
+            // Edit comment button
+            //--------------------
+            function openEditForm(existingComment, comment_id) {
+                Swal.fire({
+                    title: 'Edit Comment' + comment_id,
+                    text: 'Edit your comment here',
+                    html: '<input id="edit-comment" class="swal2-input" value="' + existingComment + '">',
+                    showCancelButton: true,
+                    confirmButtonText: 'Save',
+                    cancelButtonText: 'Cancel',
+                    preConfirm: () => {
+                        const editedComment = Swal.getPopup().querySelector('#edit-comment').value;
+
+                        // Make an AJAX request to send the edited comment to the server
+                        $.ajax({
+                            type: 'POST',
+                            url: './edit_comment.php', // Replace with the actual server-side script
+                            data: {
+                                comment_id: comment_id, // Replace with the comment ID
+                                edited_comment: editedComment
+                            },
+                            success: function (response) {
+                                // Handle the server's response here (e.g., show a success message)
+                                Swal.fire({
+                                    title: 'Comment Updated',
+                                    icon: 'success',
+                                    text: 'The comment has been updated successfully!',
+                                    showConfirmButton: false,
+                                    timer: 1000
+                                }).then(() => {
+                                    // Reload the page after the alert is closed
+                                    location.reload();
+                                });
+                            },
+                            error: function (xhr, status, error) {
+                                // Handle errors (e.g., show an error message)
+                                Swal.fire({
+                                    title: 'Error',
+                                    icon: 'error',
+                                    text: 'An error occurred while updating the comment.'
+                                });
+                            }
+                        });
+                    }
+                });
+            }
+
+            //--------------------
+            // Delete comment button
+            //--------------------
+            function DeleteComment(comment_id) {
+                Swal.fire({
+                    title: 'Are you sure?',
+                    text: "You won't be able to revert this!",
+                    icon: 'warning',
+
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+
+                    confirmButtonText: 'Yes, delete it!'
+                }).then((result,) => {
+                    if (result.isConfirmed) {
+                        Swal.fire({
+                            title: 'Deleted!',
+                            text: 'Your file has been deleted.',
+                            icon: 'success',
+                            showConfirmButton: false,
+                            timer: 1000
+
+                        })
+                        setTimeout(function () {
+                            window.location.href = './delete-comment.php?id=' + comment_id;
+                        }, 1000);
                     } else {
                         Swal.fire({
                             title: 'Cancelled',
@@ -121,16 +210,44 @@ if (isset($_GET['id'])) {
                 while ($comment = mysqli_fetch_assoc($comments_result)) {
                     echo '<div class="card mt-3">';
                     echo '<div class="card-body">';
+
+                    // Check if the current user is the owner of the comment
+                    $isCurrentUserOwner = false; // Assume the current user is not the owner
+                    if (isset($_SESSION['user_id']) && $comment['user_id'] == $_SESSION['user_id']) {
+                        $isCurrentUserOwner = true; // Set to true if the user owns the comment
+                    }
+
+                    echo '<div style="float: right;">'; // Align buttons to the right
+                    // Display the edit button if the user owns the comment
+                    if ($isCurrentUserOwner) {
+                        // Use SweetAlert2 to trigger the edit form
+                        if ($isCurrentUserOwner) {
+                            // Use SweetAlert2 to trigger the edit form
+                            echo '<button class="btn btn-primary btn-sm" type="button" onclick="openEditForm(\'' . $comment['comment'] . '\', \'' . $comment['comment_id'] . '\')">Edit</button>';
+                            echo '<button class="btn btn-danger btn-sm" type="button" onclick="DeleteComment(\'' . $comment['comment_id'] . '\')">Delete</button>';
+                        }
+
+                    }
+
+                    // Display the delete button if the user owns the comment
+                    if ($isCurrentUserOwner) {
+
+                    }
+                    echo '</div>';
+
                     $sql_userdetail = "SELECT * FROM users WHERE user_id = '{$comment['user_id']}'";
                     $result_userdetail = $conn->query($sql_userdetail);
                     $result_userdetail = $result_userdetail->fetch_assoc();
+
                     echo '<h5 class="card-title" style="margin-bottom: 0;">' . $result_userdetail['first_name'] . '</h5>';
                     echo '<p class="text-muted">' . $comment['timestamp'] . '</p>';
                     echo '<p class="card-text">' . $comment['comment'] . '</p>';
+
                     echo '</div>';
                     echo '</div>';
                 }
                 ?>
+
                 <?php if (isset($_SESSION['user_id'])): ?>
                     <form method="post" action="add-comment.php">
 
@@ -153,7 +270,7 @@ if (isset($_GET['id'])) {
             </div>
         </div>
 
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
         </body>
