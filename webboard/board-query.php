@@ -28,7 +28,7 @@ $result_users = $conn->query($sql_users);
 $row_users = $result_users->fetch_assoc();
 $user_count = $row_users['user_count'];
 
-// ปิดการเชื่อมต่อฐานข้อมูล
+
 $conn->close();
 
 ?>

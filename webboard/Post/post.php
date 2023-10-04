@@ -189,16 +189,19 @@ if (isset($_GET['id'])) {
         <!--------------------->
         <div class="container mt-5">
             <div class="post-container">
+                <div style="float: right">
+                    <?php
+                    // Display edit and delete buttons if the user is the owner of the post
+                    if ($is_owner) {
+                        echo '<a href="edit-post.php?id=' . $post_id . '" class="btn btn-primary">Edit</a>';
+                        echo '<button type="button" class="btn btn-danger" onclick="delete_button(' . $post_id . ')">Delete</button>';
+                    }
+                    ?>
+                </div>
                 <h1><?= $post['title'] ?></h1>
                 <p class="text-muted">Posted by <?= $post['first_name'] ?> on <?= $post['timestamp'] ?></p>
                 <p><?= $post['content'] ?></p>
-                <?php
-                // Display edit and delete buttons if the user is the owner of the post
-                if ($is_owner) {
-                    echo '<a href="edit-post.php?id=' . $post_id . '" class="btn btn-primary">Edit</a>';
-                    echo '<button type="button" class="btn btn-danger" onclick="delete_button(' . $post_id . ')">Delete</button>';
-                }
-                ?>
+
             </div>
 
             <!--------------------->

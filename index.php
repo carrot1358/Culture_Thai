@@ -6,6 +6,7 @@
     <title>Culture Thai</title>
 
     <?php include($_SERVER['DOCUMENT_ROOT'] . "\Template\head_include.php"); ?>
+
     <!-- Link Bootstrap stylesheet -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
@@ -20,6 +21,7 @@
 
 </head>
 <body>
+
 <!-- ***** Preloader Start ***** -->
 <div id="js-preloader" class="js-preloader">
     <div class="preloader-inner">

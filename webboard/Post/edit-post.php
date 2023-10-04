@@ -33,10 +33,10 @@ if (isset($_GET['id'])) {
 
             if ($conn->query($update_query) === TRUE) {
                 $_SESSION['message'] = "Post updated successfully.";
-                header("refresh:0; url=./post.php?id=$post_id");
+                header("refresh:1; url=./post.php?id=$post_id");
             } else {
                 $_SESSION['message'] = "Error updating post: " . $conn->error;
-                header("refresh:0; url=./post.php?id=$post_id");
+                header("refresh:1; url=./post.php?id=$post_id");
             }
         }
     } else {
@@ -109,7 +109,6 @@ if (isset($_SESSION['message'])) {
             })';
         echo '</script>';
         unset($_SESSION['message']);
-        header("refresh:2; url=../../index.php");
     }
 }
 ?>

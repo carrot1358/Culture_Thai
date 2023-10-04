@@ -7,7 +7,16 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link href="../assets/css/webboard.css" rel="stylesheet">
-
+    <?php include($_SERVER['DOCUMENT_ROOT'] . "\Template\head_include.php"); ?>
+<style>
+    body{
+        font-family: 'Noto Sans Thai', sans-serif;
+        font-weight: 300;
+    }
+    .welcome{
+        margin-bottom: 4rem;
+    }
+</style>
 </head>
 <body>
 <?php
@@ -18,22 +27,18 @@ include($_SERVER['DOCUMENT_ROOT'].'\Template\navbar-webboard.php');
 
 
 <div class="container mt-5">
-    <h1>ยินดีต้อนรับสู่เว็บบอร์ด ศิลปวัฒนธรรมไทย</h1>
-    <p> เราขอเชิญคุณเข้าร่วมการสนทนาและแลกเปลี่ยนความคิดเห็นเกี่ยวกับศิลปวัฒนธรรมที่หลากหลายและน่าสนใจของประเทศไทย
-        ที่นี่คุณจะได้พบกับสมาชิกคนรุ่นใหม่และคนรุ่นก่อนหน้าที่รักในศิลปะและวัฒนธรรมไทยเหมือนคุณเอง
-
-        ร่วมแชร์ประสบการณ์, แนะนำสถานที่ท่องเที่ยวที่น่าสนใจ,
-        หรือแบ่งปันความรู้เกี่ยวกับศิลปะและวัฒนธรรมของเราเองได้โดยอิสระ
-
-        ขอให้คุณมีประสบการณ์ที่มีค่าและสนุกสนานในการเป็นส่วนหนึ่งของชุมชนนี้!</p>
+    <div class="welcome">
+        <h1>ยินดีต้อนรับสู่เว็บบอร์ด ประเพณีลอยกระทง</h1>
+        <p> ร่วมสนทนาและแบ่งปันเรื่องราวที่เกี่ยวกับประเพณีลอยกระทงในประเทศไทยที่นี่ครับ/ค่ะ!</p>
+    </div>
+    
     <div class="row">
 
+        <!-------------------->
         <!-- Display  posts -->
+        <!-------------------->
         <div class="col-lg-8">
-
-            
             <div class="row">
-                <!--Recent posts text-->
                 <div class="col"><h2>Recent Posts</h2></div>
                 <!--Create post button-->
                 <?php if ($user_logged_in) : ?>
@@ -44,7 +49,10 @@ include($_SERVER['DOCUMENT_ROOT'].'\Template\navbar-webboard.php');
                                                    class="btn btn-primary">สร้างโพสต์</a></div>
                 <?php endif; ?>
             </div>
+
+            <!-------------------------->
             <!-- Display recent posts -->
+            <!-------------------------->
             <?php while ($row = $recent_result->fetch_assoc()) : ?>
                 <div class="card mb-3">
                     <div class="card-body">
@@ -59,7 +67,9 @@ include($_SERVER['DOCUMENT_ROOT'].'\Template\navbar-webboard.php');
                 </div>
             <?php endwhile; ?>
 
+            <!----------------------->
             <!-- Display all posts -->
+            <!----------------------->
             <h2>All Posts</h2>
             <?php while ($row = $All_result->fetch_assoc()) : ?>
                 <div class="card mb-3">
@@ -75,7 +85,10 @@ include($_SERVER['DOCUMENT_ROOT'].'\Template\navbar-webboard.php');
             <?php endwhile; ?>
         </div>
 
+
+        <!------------------------>
         <!-- Display statistics -->
+        <!------------------------>
         <div class="col-lg-4">
             <div class="Statistics">
                 <h4>Statistics</h4>

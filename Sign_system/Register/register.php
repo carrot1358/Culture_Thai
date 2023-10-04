@@ -99,7 +99,7 @@ if (isset($_SESSION['message'])) {
             })';
         echo '</script>';
         unset($_SESSION['message']);
-        header("refresh:0; url=../Login/login.php");
+        header("refresh:1; url=../Login/login.php");
     }
 }
 ?>
